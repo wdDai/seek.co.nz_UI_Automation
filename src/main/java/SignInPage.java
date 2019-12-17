@@ -7,7 +7,7 @@ public class SignInPage extends BasePage{
     private By signInButton = By.cssSelector("button[type=\"submit\"]");
 
     public void enterEmail(String emailAddress){
-//        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(emailInput)));
+        wait.until(ExpectedConditions.elementToBeClickable(emailInput));
         driver.findElement(emailInput).sendKeys(emailAddress);
     }
     public void enterPassword(String password){

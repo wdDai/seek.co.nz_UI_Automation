@@ -11,7 +11,7 @@ public class HomePage extends BasePage{
         BasePage.wait = wait;
     }
     public SignInPage clickSignIn(){
-//        wait.until(ExpectedConditions.invisibilityOf(driver.findElement(signInLink)));
+        wait.until(ExpectedConditions.elementToBeClickable(signInLink));
         driver.findElement(signInLink).click();
         return new SignInPage();
     }
