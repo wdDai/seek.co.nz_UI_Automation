@@ -1,20 +1,25 @@
+package Pages;
+
+import BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class SignInPage extends BasePage{
+public class SigningInPage extends BasePage {
     private By emailInput = By.id("email");
     private By passwordInput = By.id("password");
     private By signInButton = By.cssSelector("button[type=\"submit\"]");
 
-    public void enterEmail(String emailAddress){
+    public void enterEmail(String emailAddress) {
         wait.until(ExpectedConditions.elementToBeClickable(emailInput));
         driver.findElement(emailInput).sendKeys(emailAddress);
     }
-    public void enterPassword(String password){
+
+    public void enterPassword(String password) {
         driver.findElement(passwordInput).sendKeys(password);
     }
-    public ProfilePage clickSignIn(){
+
+    public SignedInPage clickSignIn() {
         driver.findElement(signInButton).click();
-        return new ProfilePage();
+        return new SignedInPage();
     }
 }
