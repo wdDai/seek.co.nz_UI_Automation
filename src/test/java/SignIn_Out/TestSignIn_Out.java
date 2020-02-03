@@ -1,3 +1,5 @@
+package SignIn_Out;
+
 import Base.TestBase;
 import Pages.SignedInPage;
 import TestUtils.TestUtils;
@@ -6,7 +8,7 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
 
-public class SignIn_Out extends TestBase {
+public class TestSignIn_Out extends TestBase {
     @Test
     public void testSignIn() {
         // Assert
@@ -15,7 +17,7 @@ public class SignIn_Out extends TestBase {
     }
 
     @Test
-    public void testSignOut() {
+    public void testSignOut() throws InterruptedException {
         // Act
         TestUtils.signOut();
 

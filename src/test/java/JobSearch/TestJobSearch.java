@@ -1,11 +1,13 @@
 package JobSearch;
 
 import Base.TestBase;
+import Pages.JobSearchPage;
+import Pages.SignedInPage;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertTrue;
 
-public class JobSearchTest extends TestBase {
+public class TestJobSearch extends TestBase {
     @Test
     public void testJobSearch() {
         // Act
@@ -22,7 +24,7 @@ public class JobSearchTest extends TestBase {
     }
 
     @Test(dependsOnMethods = "testJobSearch")
-    public void testJobSearchResult(){
+    public void testJobSearchResult() {
 
     }
 }

@@ -3,13 +3,13 @@ package UserProfile;
 import Base.TestBase;
 import Pages.SignedInPage;
 import org.testng.annotations.Test;
-import UserProfile.*;
+
 import static org.testng.Assert.assertTrue;
 
 
-public class UserProfile extends TestBase {
+public class TestUserProfile extends TestBase {
     @Test
-    public void testGotoUserProfilePage(){
+    public void testGotoUserProfilePage() throws InterruptedException {
         // Act
         SignedInPage signedInPage = new SignedInPage();
         UserProfilePage userProfilePage = signedInPage.clickUserDropdownMenu().clickProfile();
@@ -19,19 +19,24 @@ public class UserProfile extends TestBase {
     }
 
     @Test(dependsOnMethods = "testGotoUserProfilePage")
-    public void testEditUserProfile(){
+    public void testEditUserProfile() {
         // Act
         UserProfilePage userProfilePage = new UserProfilePage();
         EditUserProfilePage editUserProfilePage = userProfilePage.clickEditPersonalDetails();
-        editUserProfilePage.inputFirstName("Albert").inputLastName("Einstein").inputPhoneNumber("02103134873").selectLocation("Auckland").clickSave();
+        editUserProfilePage.inputFirstName("Albert").inputLastName("Einstein").inputPhoneNumber("02103134873").selectLocation("Auckland").personalDetailClickSave();
 
         // Assert
         assertTrue(userProfilePage.editPersonalDetailIsDisplayed());
     }
 
-    @Test
-    public void testAddResume(){
+    @Test(dependsOnMethods = "testGotoUserProfilePage")
+    public void testAddResume() {
+        // Act
         EditUserProfilePage editUserProfilePage = new EditUserProfilePage();
+        editUserProfilePage.clickAddOrManageResumeButton();
         editUserProfilePage.upLoadResume("/Users/dailex/Documents/Wending_learn_group/IntelliJIDEA_ReferenceCard.pdf ");
+
+        // Assert
+        assertTrue(editUserProfilePage.getResumeDownloadLinkTexts().contains("IntelliJIDEA_ReferenceCard.pdf"));
     }
 }

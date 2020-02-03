@@ -26,6 +26,7 @@ public class BasePage {
     }
 
     protected void inputText(By inputField, String text) {
+// TODO javascript
         driver.findElement(inputField).sendKeys(Keys.COMMAND + "a");
         driver.findElement(inputField).sendKeys(Keys.BACK_SPACE);
         driver.findElement(inputField).sendKeys(text);

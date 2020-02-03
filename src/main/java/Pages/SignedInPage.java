@@ -1,10 +1,10 @@
 package Pages;
 
-import BasePage;
+
+import Base.BasePage;
 import UserProfile.UserProfilePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SignedInPage extends BasePage {
     private By jobSearchTab = By.cssSelector("a[href=\"/\"]._17m4m-C");
@@ -16,7 +16,8 @@ public class SignedInPage extends BasePage {
         return driver.findElement(userName).getText();
     }
 
-    public DropDownMenu clickUserDropdownMenu() {
+    public DropDownMenu clickUserDropdownMenu() throws InterruptedException {
+        Thread.sleep(3000);
         click(userAccountMenuToggle);
         return new DropDownMenu();
     }
@@ -35,7 +36,6 @@ public class SignedInPage extends BasePage {
         }
 
         public UserProfilePage clickProfile() {
-            wait.until(ExpectedConditions.visibilityOf(driver.findElement(profile)));
             click(profile);
             return new UserProfilePage();
         }

@@ -1,6 +1,6 @@
 package Pages;
 
-import BasePage;
+import Base.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -33,6 +33,7 @@ public class JobSearchPage extends BasePage {
     }
 
     public void inputArea(String area) {
+//        driver.findElement(jobAreaSearchBar).clear();
         driver.findElement(jobAreaSearchBar).sendKeys(area);
     }
 
