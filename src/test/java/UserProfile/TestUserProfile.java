@@ -34,6 +34,7 @@ public class TestUserProfile extends TestBase {
         // Act
         EditUserProfilePage editUserProfilePage = new EditUserProfilePage();
         editUserProfilePage.clickAddOrManageResumeButton();
+        // TODO use relative path to upload file
         editUserProfilePage.upLoadResume("/Users/dailex/Documents/Wending_learn_group/IntelliJIDEA_ReferenceCard.pdf ");
 
         // Assert
