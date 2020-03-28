@@ -2,6 +2,8 @@ package Base;
 
 import Pages.HomePage;
 import TestUtils.TestUtils;
+import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -11,20 +13,22 @@ import org.testng.annotations.BeforeTest;
 
 public class TestBase {
     protected static WebDriver driver;
-    protected static HomePage homePage;
     protected static WebDriverWait wait;
+
 
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "resources/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/test/resources/UITest/chromedriver");
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, 5);
+        BasePage.setDriver(driver);
+        BasePage.setWait(wait);
     }
+
 
     @BeforeClass
     public void goHome() {
-        driver.get("http://seek.co.nz");
-        homePage = new HomePage(driver, wait);
+        new HomePage().goHome();
         TestUtils.signIn();
     }
 

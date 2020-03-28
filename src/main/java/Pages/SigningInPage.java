@@ -3,7 +3,6 @@ package Pages;
 
 import Base.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SigningInPage extends BasePage {
     private By emailInput = By.id("email");
@@ -11,16 +10,15 @@ public class SigningInPage extends BasePage {
     private By signInButton = By.cssSelector("button[type=\"submit\"]");
 
     public void enterEmail(String emailAddress) {
-        wait.until(ExpectedConditions.elementToBeClickable(emailInput));
-        driver.findElement(emailInput).sendKeys(emailAddress);
+        inputText(emailInput, emailAddress);
     }
 
     public void enterPassword(String password) {
-        driver.findElement(passwordInput).sendKeys(password);
+        inputText(passwordInput, password);
     }
 
     public SignedInPage clickSignIn() {
-        driver.findElement(signInButton).click();
+        click(signInButton);
         return new SignedInPage();
     }
 }

@@ -1,6 +1,7 @@
 package SignIn_Out;
 
 import Base.TestBase;
+import Pages.HomePage;
 import Pages.SignedInPage;
 import TestUtils.TestUtils;
 import org.testng.annotations.Test;
@@ -22,6 +23,6 @@ public class TestSignIn_Out extends TestBase {
         TestUtils.signOut();
 
         //Assert
-        assertFalse(homePage.isSignedIn());
+        assertFalse(new HomePage().isSignedIn());
     }
 }

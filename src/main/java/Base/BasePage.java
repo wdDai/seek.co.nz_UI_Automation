@@ -9,6 +9,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     protected static WebDriver driver;
     protected static WebDriverWait wait;
+    protected static final String HOME_URL = "http://seek.co.nz";
+
+    public static void setDriver(WebDriver driver){
+        BasePage.driver = driver;
+    }
+
+    public static void setWait(WebDriverWait wait){
+        BasePage.wait = wait;
+    }
 
     protected void click(By element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -27,14 +36,10 @@ public class BasePage {
 
     protected void inputText(By inputField, String text) {
 // TODO javascript
+        wait.until(ExpectedConditions.elementToBeClickable(inputField));
         driver.findElement(inputField).sendKeys(Keys.COMMAND + "a");
         driver.findElement(inputField).sendKeys(Keys.BACK_SPACE);
         driver.findElement(inputField).sendKeys(text);
-    }
-
-    protected void clickButton(By button) {
-        wait.until(ExpectedConditions.elementToBeClickable(button));
-        driver.findElement(button).click();
     }
 
     protected void uploadFile(By fileUploadField, String filePath){

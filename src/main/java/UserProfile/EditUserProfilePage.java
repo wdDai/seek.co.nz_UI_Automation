@@ -41,17 +41,17 @@ public class EditUserProfilePage extends BasePage {
     }
 
     public UserProfilePage personalDetailClickSave() {
-        clickButton(personalDetailsSaveButton);
+        click(personalDetailsSaveButton);
         return new UserProfilePage();
     }
 
     public EditUserProfilePage clickCancel() {
-        clickButton(cancelButton);
+        click(cancelButton);
         return this;
     }
 
     public EditUserProfilePage clickAddResume() {
-        clickButton(addResumeButton);
+        click(addResumeButton);
         return this;
     }
 
@@ -61,7 +61,7 @@ public class EditUserProfilePage extends BasePage {
 
     public void uploadResumeClickDone() throws InterruptedException {
         Thread.sleep(3000);
-        clickButton(resumeUploadDoneButton);
+        click(resumeUploadDoneButton);
     }
 
     public ArrayList<String> getResumeDownloadLinkTexts(){
@@ -72,7 +72,7 @@ public class EditUserProfilePage extends BasePage {
     }
 
     public void clickAddOrManageResumeButton(){
-        clickButton(addOrManageResumeButton);
+        click(addOrManageResumeButton);
     }
 
 }

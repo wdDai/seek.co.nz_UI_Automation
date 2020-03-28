@@ -1,14 +1,16 @@
 package TestUtils;
 
 import Base.TestBase;
+import Pages.HomePage;
 import Pages.SignedInPage;
 import Pages.SigningInPage;
 
 public class TestUtils extends TestBase {
     public static void signIn() {
-        SigningInPage signingInPage = homePage.clickSignIn();
+        SigningInPage signingInPage = new HomePage().clickSignIn();
         signingInPage.enterEmail("testeryouknowwho@gmail.com");
         signingInPage.enterPassword("testeryouknowwho");
+        signingInPage.clickSignIn();
     }
 
 
