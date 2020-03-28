@@ -15,7 +15,7 @@ public class UserProfilePage extends BasePage {
     }
 
     public EditUserProfilePage clickEditPersonalDetails(){
-        clickButton(editPersonalDetailButton);
+        click(editPersonalDetailButton);
         return new EditUserProfilePage();
     }
 }
