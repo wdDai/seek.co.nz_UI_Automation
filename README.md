@@ -10,7 +10,7 @@ mvn test
 ```
 
 ### Using Cucumber
-Right click on src/test/resources/UITest/*.feature to run
+Right click on src/test/resources/UITest/*.feature to run.
 
 ## Built With
 - Java
@@ -22,7 +22,7 @@ Right click on src/test/resources/UITest/*.feature to run
 - Jenkins
 
 ## Code details
-BasePage encapsulates the basic methods for page classes
+BasePage encapsulates the basic methods for page classes.
 ```
 public class BasePage {
     protected static WebDriver driver;
@@ -35,7 +35,7 @@ public class BasePage {
 }
 ```
 
-Page classes extends BasePage class containing actions to be tested:
+Page classes extends BasePage class containing actions to be tested.
 ```
 public class HomePage extends BasePage {
     private By signInLink = By.cssSelector("a._2l410Lj[title=\"Sign in\"]");
