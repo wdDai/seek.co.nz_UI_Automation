@@ -21,12 +21,12 @@ mvn test
 - Jenkins
 
 ---
-###Using Cucumber
+### Using Cucumber
 
 Right click on src/test/resources/UITest/*.feature to run
 
 ---
-##Code details
+## Code details
 
 BasePage encapsulates the basic methods for page classes
 ```
