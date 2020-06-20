@@ -35,7 +35,7 @@ public class BasePage {
 }
 ```
 
-Page classes extends BasePage class containing actions to be tested.
+Page classes extends BasePage class contains actions on the page.
 ```
 public class HomePage extends BasePage {
     private By signInLink = By.cssSelector("a._2l410Lj[title=\"Sign in\"]");
